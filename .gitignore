@@ -1,0 +1,4 @@
+/.metadata/
+*.properties
+*.cmd
+CalCount/mvnw
