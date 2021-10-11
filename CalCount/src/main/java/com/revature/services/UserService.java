@@ -1,5 +1,6 @@
 package com.revature.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ public class UserService {
 	}
 
 	public void saveUser(User user) {
+		ArrayList<Integer> emptyList = new ArrayList<Integer>();
+		user.setFriends(emptyList);
 		userRepository.save(user);
 	}
 

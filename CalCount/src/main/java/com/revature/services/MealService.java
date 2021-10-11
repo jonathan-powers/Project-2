@@ -1,5 +1,6 @@
 package com.revature.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class MealService {
 	}
 
 	public void saveMeal(Meal meal) {
+		meal.setDate(LocalDateTime.now());
 		mealRepository.save(meal);	
 	}
 
