@@ -18,8 +18,8 @@ public class Meal {
 	@Column
 	int id;
 	
-	@Column
-	int userId;
+	@ManyToOne
+	User user;
 	
 	@Column
 	String name;
