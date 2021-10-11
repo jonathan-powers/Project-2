@@ -17,4 +17,8 @@ public class MealService {
 		return mealRepository.findById(Id);
 	}
 
+	public void saveMeal(Meal meal) {
+		mealRepository.save(meal);	
+	}
+
 }
