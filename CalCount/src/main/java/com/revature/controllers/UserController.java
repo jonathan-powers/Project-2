@@ -19,7 +19,7 @@ public class UserController {
 	
 	@PostMapping(path = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public void saveMeal(@RequestBody User user) {
-		userService.saveMeal(user);
+		userService.saveUser(user);
 	}
 	
 	public boolean Login(String email, String Password) {
