@@ -1,7 +1,10 @@
 package com.revature.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +25,12 @@ public class MealController {
 		mealService.saveMeal(meal);
 	}
 	
+	@GetMapping(path = "", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public List<Meal> findAll(){
+		return mealService.findAll();
+	}
+	
+	@GetMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Meal findById(int Id) {
 		return mealService.findById(Id);
 	}

@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,5 +20,10 @@ public class UserService {
 
 	public void saveUser(User user) {
 		userRepository.save(user);
+	}
+
+	public List<User> findAllUsers() {
+		return userRepository.findAll();
+		
 	}
 }

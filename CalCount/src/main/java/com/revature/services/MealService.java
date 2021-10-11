@@ -1,5 +1,7 @@
 package com.revature.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,10 @@ public class MealService {
 	
 	@Autowired
 	private MealRepository mealRepository;
+	
+	public List<Meal> findAll(){
+		return mealRepository.findAll();
+	}
 	
 	public Meal findById(int Id) {
 		return mealRepository.findById(Id);
