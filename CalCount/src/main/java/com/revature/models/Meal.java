@@ -16,7 +16,7 @@ public class Meal {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	int Id;
+	int id;
 	
 	@Column
 	int userId;

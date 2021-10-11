@@ -10,7 +10,5 @@ import com.revature.models.Meal;
 public interface MealRepository extends JpaRepository<Meal, Long> {
 	
 	public Meal findById(int Id);
-
-	public void saveMeal(Meal meal);
 	
 }

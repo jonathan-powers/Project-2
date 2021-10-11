@@ -1,6 +1,6 @@
 package com.revature.models;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import javax.persistence.*;
 
@@ -39,5 +39,5 @@ public class User {
 	int weight;
 	
 	@Column
-	List<Integer> friends;
+	ArrayList<Integer> friends;
 }

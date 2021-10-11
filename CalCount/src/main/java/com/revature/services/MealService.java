@@ -18,7 +18,7 @@ public class MealService {
 	}
 
 	public void saveMeal(Meal meal) {
-		mealRepository.saveMeal(meal);	
+		mealRepository.save(meal);	
 	}
 
 }
