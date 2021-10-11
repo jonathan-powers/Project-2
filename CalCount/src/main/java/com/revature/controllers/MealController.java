@@ -1,4 +1,4 @@
-package com.reavture.controllers;
+package com.revature.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -7,23 +7,23 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.reavture.models.User;
-import com.revature.services.UserService;
+import com.revature.models.Meal;
+import com.revature.services.MealService;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/meals")
+public class MealController {
 	
 	@Autowired
-	private UserService userService;
+	private MealService mealService;
 	
 	@PostMapping(path = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void saveMeal(@RequestBody User user) {
-		userService.saveMeal(user);
+	public void saveMeal(@RequestBody Meal meal) {
+		mealService.saveMeal(meal);
 	}
 	
-	public boolean Login(String email, String Password) {
-		userService.findUserByEmail(email);
-		return true;
+	public Meal findById(int Id) {
+		return mealService.findById(Id);
 	}
+
 }

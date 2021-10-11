@@ -3,7 +3,7 @@ package com.revature.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.reavture.models.Meal;
+import com.revature.models.Meal;
 
 
 @Repository
