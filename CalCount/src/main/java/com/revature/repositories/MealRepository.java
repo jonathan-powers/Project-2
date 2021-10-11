@@ -1,9 +1,9 @@
-package repositories;
+package com.revature.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import models.Meal;
+import com.reavture.models.Meal;
 
 
 @Repository

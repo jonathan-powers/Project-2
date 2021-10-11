@@ -1,4 +1,4 @@
-package models;
+package com.reavture.models;
 
 import java.util.List;
 
