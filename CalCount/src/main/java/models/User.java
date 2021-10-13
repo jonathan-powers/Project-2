@@ -1,25 +1,51 @@
-package models;
+package com.revature.models;
 
-import java.util.List;
+import java.time.LocalDateTime;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@EqualsAndHashCode
+@NoArgsConstructor
+@AllArgsConstructor
 
 public class User {
-	int Id;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column
+	int id;
+	
+	@Column
+	int userId;
+	
+	@Column
 	String name;
 	
-	String email;
-	
-	String password;
-	
-	/**
-	 * height in centimeters
-	 */
-	int height;
+	@Column
+	String description;
 	
 	/**
-	 * weight in kilograms
+	 * True if calories is negative
 	 */
-	int weight;
+	@Column
+	boolean exercise;
 	
-	List<Integer> friends;
+	@Column
+	int calories;
+	
+	@Column
+	LocalDateTime date;
 }
