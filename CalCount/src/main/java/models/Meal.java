@@ -1,6 +1,6 @@
 package com.revature.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -47,5 +47,5 @@ public class Meal {
 	int calories;
 	
 	@Column
-	LocalDateTime date;
+	LocalDate date;
 }

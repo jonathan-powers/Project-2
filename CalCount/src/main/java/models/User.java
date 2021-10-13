@@ -1,6 +1,6 @@
 package com.revature.models;
 
-import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -26,26 +26,29 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	int id;
-	
-	@Column
-	int userId;
+	int Id;
 	
 	@Column
 	String name;
 	
 	@Column
-	String description;
+	String email;
+	
+	@Column
+	String password;
 	
 	/**
-	 * True if calories is negative
+	 * height in centimeters
 	 */
 	@Column
-	boolean exercise;
+	int height;
+	
+	/**
+	 * weight in kilograms
+	 */
+	@Column
+	int weight;
 	
 	@Column
-	int calories;
-	
-	@Column
-	LocalDateTime date;
+	ArrayList<Integer> friends;
 }
