@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.models.Meal;
@@ -30,8 +31,8 @@ public class MealController {
 		return mealService.findAll();
 	}
 	
-	@GetMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public Meal findById(int Id) {
+	@GetMapping(path = "/{Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Meal findById(@RequestParam int Id) {
 		return mealService.findById(Id);
 	}
 
