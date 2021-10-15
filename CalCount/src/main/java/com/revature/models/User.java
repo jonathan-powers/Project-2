@@ -39,5 +39,5 @@ public class User {
 	int weight;
 	
 	@Column
-	ArrayList<Integer> friends;
+	ArrayList<User> friends;
 }

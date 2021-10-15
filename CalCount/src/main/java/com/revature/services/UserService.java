@@ -20,7 +20,7 @@ public class UserService {
 	}
 
 	public void saveUser(User user) {
-		ArrayList<Integer> emptyList = new ArrayList<Integer>();
+		ArrayList<User> emptyList = new ArrayList<User>();
 		user.setFriends(emptyList);
 		userRepository.save(user);
 	}
