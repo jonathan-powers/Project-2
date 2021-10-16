@@ -39,9 +39,10 @@ public class MealController {
 		return mealService.findById(Id);
 	}
 
-	@GetMapping(path = "/{Date}/users/{user_Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public List<Meal> findByUserAndDate(@RequestParam int user_Id, @RequestParam LocalDate Date){
-		return mealService.findByUserAndDate(user_Id, Date);
+	@GetMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public List<Meal> findByUserAndDate(@RequestParam int user_Id, @RequestParam String Date){
+		LocalDate fDate = LocalDate.parse(Date);
+		return mealService.findByUserAndDate(user_Id, fDate);
 	}
 
 }
