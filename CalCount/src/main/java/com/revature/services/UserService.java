@@ -20,13 +20,22 @@ public class UserService {
 	}
 
 	public void saveUser(User user) {
-		ArrayList<User> emptyList = new ArrayList<User>();
-		user.setFriends(emptyList);
 		userRepository.save(user);
 	}
 
 	public List<User> findAllUsers() {
 		return userRepository.findAll();
 		
+	}
+
+	public List<User> findUserFriends(int id) {
+		ArrayList<User> friends = new ArrayList<User>();
+		User user = userRepository.findById(id);
+		for (int friendId : user.getFriends()) {
+			User friend = userRepository.findById(friendId);
+			friends.add(friend);
+		}
+		
+		return friends;
 	}
 }
