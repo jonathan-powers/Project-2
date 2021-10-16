@@ -30,9 +30,10 @@ public class MealService {
 	}
 
 	public void saveMeal(Meal meal) {
+		meal.setDate(LocalDate.now());
 		mealRepository.save(meal);	
 	}
-
+	
 	public List<Meal> findByUserAndDate(int user_Id, LocalDate Date) {
 		User user = userRepository.findById(user_Id);
 		return mealRepository.findAllByUserAndDate(user, Date);
