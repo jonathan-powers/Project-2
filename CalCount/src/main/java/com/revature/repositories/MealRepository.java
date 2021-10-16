@@ -9,12 +9,10 @@ import org.springframework.stereotype.Repository;
 import com.revature.models.Meal;
 import com.revature.models.User;
 
-
 @Repository
 public interface MealRepository extends JpaRepository<Meal, Long> {
 	
 	public Meal findById(int Id);
-
-	public ArrayList<Meal> findAllByUserAndDate(User user, LocalDate date);
 	
+	public ArrayList<Meal> findAllByUserAndDate(User user, LocalDate date);
 }

@@ -15,19 +15,20 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 
-	public User findUserByEmail(String email) {
-		return userRepository.findByEmail(email);
+	public User findUserByEmailAndPassword(String email, String password) {
+		return userRepository.findByEmailAndPassword(email, password);
 	}
 
 	public void saveUser(User user) {
+		ArrayList<Integer> emptyList = new ArrayList<Integer>();
+		user.setFriends(emptyList);
 		userRepository.save(user);
 	}
 
 	public List<User> findAllUsers() {
 		return userRepository.findAll();
-		
 	}
-
+	
 	public List<User> findUserFriends(int id) {
 		ArrayList<User> friends = new ArrayList<User>();
 		User user = userRepository.findById(id);
