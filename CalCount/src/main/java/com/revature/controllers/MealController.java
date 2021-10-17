@@ -1,4 +1,3 @@
-
 package com.revature.controllers;
 
 import java.time.LocalDate;
@@ -47,4 +46,3 @@ public class MealController {
 	}
 
 }
-

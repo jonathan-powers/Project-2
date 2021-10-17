@@ -39,4 +39,16 @@ public class UserService {
 		
 		return friends;
 	}
+	
+	public void addFriend(int user_id, int friend_id) {
+		User user = userRepository.findById(user_id);
+		User friend = userRepository.findById(friend_id);
+		ArrayList<Integer> userFriends = user.getFriends();
+		userFriends.add(friend.getId());
+		user.setFriends(userFriends);
+	}
+	
+	public User findById(int id) {
+		return userRepository.findById(id);
+	}
 }

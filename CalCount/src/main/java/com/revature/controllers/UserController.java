@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,4 +43,16 @@ public class UserController {
 		userService.findUserByEmailAndPassword(email, Password);
 		return true;
 	}
+	
+	@GetMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public User findById(int id) {
+		return userService.findById(id);
+	}
+	
+	@PutMapping(path = "/{user_id}/add/{friend_id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public void addFriend(@RequestParam int user_id, 
+			@RequestParam int friend_id){
+		userService.addFriend(user_id, friend_id);
+	}
+
 }
