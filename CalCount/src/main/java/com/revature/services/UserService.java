@@ -28,4 +28,27 @@ public class UserService {
 	public List<User> findAllUsers() {
 		return userRepository.findAll();
 	}
+	
+	public List<User> findUserFriends(int id) {
+		ArrayList<User> friends = new ArrayList<User>();
+		User user = userRepository.findById(id);
+		for (int friendId : user.getFriends()) {
+			User friend = userRepository.findById(friendId);
+			friends.add(friend);
+		}
+		
+		return friends;
+	}
+	
+	public void addFriend(int user_id, int friend_id) {
+		User user = userRepository.findById(user_id);
+		User friend = userRepository.findById(friend_id);
+		ArrayList<Integer> userFriends = user.getFriends();
+		userFriends.add(friend.getId());
+		user.setFriends(userFriends);
+	}
+	
+	public User findById(int id) {
+		return userRepository.findById(id);
+	}
 }

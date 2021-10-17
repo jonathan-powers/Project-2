@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,6 +35,11 @@ public class MealController {
 	@GetMapping(path = "/{Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
 	public Meal findById(@RequestParam int Id) {
 		return mealService.findById(Id);
+	}
+	
+	@GetMapping(path = "/{Date}/users/{user_Id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+	public List<Meal> findByUserAndDate(@RequestParam int user_Id, @RequestParam LocalDate Date){
+		return mealService.findByUserAndDate(user_Id, Date);
 	}
 
 }
