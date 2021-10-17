@@ -41,8 +41,8 @@ public class UserController {
 	}
 	
 	@PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public boolean Login(String email, String Password) {
-		userService.findUserByEmailAndPassword(email, Password);
+	public boolean Login(String email, String password) {
+		userService.findUserByEmailAndPassword(email, password);
 		return true;
 	}
 	
