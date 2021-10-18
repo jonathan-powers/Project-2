@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,9 +40,8 @@ public class UserController {
 	}
 	
 	@PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public boolean Login(String email, String password) {
-		userService.findUserByEmailAndPassword(email, password);
-		return true;
+	public User Login(@RequestBody String email, @RequestBody String Password) {
+		return userService.findUserByEmailAndPassword(email, Password);
 	}
 	
 	@GetMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
