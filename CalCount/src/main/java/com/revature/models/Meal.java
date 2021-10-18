@@ -1,14 +1,24 @@
 package com.revature.models;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table
+@AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class Meal {
@@ -37,6 +47,6 @@ public class Meal {
 	int calories;
 	
 	@Column
-	LocalDateTime date;
+	LocalDate date;
 
 }
