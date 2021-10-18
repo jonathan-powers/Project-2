@@ -18,8 +18,8 @@ import com.revature.services.UserService;
 
 @RestController
 @RequestMapping("/users")
-//@CrossOrigin("http://calcount-bucket.s3-website-us-west-1.amazonaws.com/")
-@CrossOrigin
+@CrossOrigin("http://calcount-bucket.s3-website-us-west-1.amazonaws.com/")
+//@CrossOrigin
 public class UserController {
 
     @Autowired
