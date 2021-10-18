@@ -18,7 +18,7 @@ import com.revature.services.MealService;
 
 @RestController
 @RequestMapping("/meals")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://calcount-bucket.s3-website-us-west-1.amazonaws.com")
 public class MealController {
 
 	@Autowired

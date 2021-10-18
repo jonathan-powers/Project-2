@@ -18,41 +18,41 @@ import com.revature.services.UserService;
 
 @RestController
 @RequestMapping("/users")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://calcount-bucket.s3-website-us-west-1.amazonaws.com")
 public class UserController {
-	
-	@Autowired
-	private UserService userService;
-	
-	@PostMapping(path = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void saveUser(@RequestBody User user) {
-		userService.saveUser(user);
-	}
-	
-	@GetMapping(path = "", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public List<User> getAllUsers(){
-		return userService.findAllUsers();
-	}
-	
-	@GetMapping(path = "/{id}/friends", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public List<User> getUserFriends(@RequestParam int id){
-		return userService.findUserFriends(id);
-	}
-	
-	@PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public User Login(@RequestBody String email, @RequestBody String Password) {
-		return userService.findUserByEmailAndPassword(email, Password);
-	}
-	
-	@GetMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public User findById(int id) {
-		return userService.findById(id);
-	}
-	
-	@PutMapping(path = "/{user_id}/add/{friend_id}", consumes = MediaType.APPLICATION_JSON_VALUE)
-	public void addFriend(@RequestParam int user_id, 
-			@RequestParam int friend_id){
-		userService.addFriend(user_id, friend_id);
-	}
+
+    @Autowired
+    private UserService userService;
+
+    @PostMapping(path = "/new", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void saveUser(@RequestBody User user) {
+        userService.saveUser(user);
+    }
+
+    @GetMapping(path = "", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public List<User> getAllUsers(){
+        return userService.findAllUsers();
+    }
+
+    @GetMapping(path = "/{id}/friends", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public List<User> getUserFriends(@RequestParam int id){
+        return userService.findUserFriends(id);
+    }
+
+    @PostMapping(path = "/login", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public User Login(String email, String password) {
+        return userService.findUserByEmailAndPassword(email, password);
+    }
+
+    @GetMapping(path = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public User findById(int id) {
+        return userService.findById(id);
+    }
+
+    @PutMapping(path = "/{user_id}/add/{friend_id}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void addFriend(@RequestParam int user_id, 
+            @RequestParam int friend_id){
+        userService.addFriend(user_id, friend_id);
+    }
 
 }
